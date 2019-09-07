@@ -1,0 +1,21 @@
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+    
+    compile("org.springframework.boot:spring-boot:$springBootVersion")
+    compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
+    
+    //hystrix
+    compile("com.netflix.hystrix:hystrix-core:$hystrixVersion")
+    compile("com.netflix.hystrix:hystrix-metrics-event-stream:$hystrixVersion")
+    compile("com.netflix.hystrix:hystrix-javanica:$hystrixVersion")
+    
+    testCompile("junit:junit:$springBootVersion")
+    
+}
+
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
